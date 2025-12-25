@@ -154,10 +154,9 @@ Built on a foundation of 12,900+ listings and 850,000+ guest reviews, these appl
   - Total cost breakdown
 - Link to original Airbnb listing
 
+---
+
 #### How It Works:
-
-![Booking Portal Workflow](images/booking_app_workflow.png)
-
 1. **Set Filters**: Define your requirements (guests, price, location, etc.)
 2. **Browse Listings**: View up to 50 matching properties
 3. **Review Details**: See photos, sentiment scores, and key features
@@ -165,6 +164,9 @@ Built on a foundation of 12,900+ listings and 850,000+ guest reviews, these appl
 5. **Select Property**: Click "Select" button on preferred listing
 6. **Checkout**: Review booking details and total cost
 7. **Confirm**: Complete booking simulation
+
+[Booking Portal Workflow] 
+<img width="958" height="541" alt="image" src="https://github.com/user-attachments/assets/6bfb6edb-9817-4b9e-9d1b-c90dd974eb3f" />
 
 #### What It Displays:
 
