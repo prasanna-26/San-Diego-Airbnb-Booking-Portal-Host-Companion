@@ -99,7 +99,13 @@ elif sort_option == "Best Value":
     filtered_df['value_score'] = filtered_df['price'] / (filtered_df['mean_compound'] + 1.5)  # Add 1.5 to avoid division issues
     filtered_df = filtered_df.sort_values('value_score', ascending=True)
     filtered_df = filtered_df.drop(columns=['value_score'])
-# else: Relevance (default order, no sorting)
+elif sort_option == "Relevance":
+    # Prefer exact guest matches first, then minimal surplus capacity
+    if num_guests is not None and 'accommodates' in filtered_df.columns:
+        filtered_df['relevance_rank'] = (filtered_df['accommodates'] != num_guests).astype(int)
+        filtered_df['guest_delta'] = (filtered_df['accommodates'] - num_guests).clip(lower=0)
+        filtered_df = filtered_df.sort_values(['relevance_rank', 'guest_delta'], ascending=[True, True])
+        filtered_df = filtered_df.drop(columns=['relevance_rank', 'guest_delta'])
 
 st.markdown(f"**Found {len(filtered_df)} listings matching your criteria.**")
 
